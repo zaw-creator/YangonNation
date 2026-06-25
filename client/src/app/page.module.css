@@ -1,0 +1,67 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  padding: 48px 24px;
+  background-image: radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 60%);
+}
+
+.brand { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+
+.eyebrow {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold);
+}
+
+.title {
+  font-size: clamp(56px, 14vw, 110px);
+  font-weight: 900; letter-spacing: 0.06em; line-height: 0.9;
+  color: #fff;
+}
+
+.accent { color: var(--gold); }
+
+.tagline { font-size: 15px; color: var(--muted); margin-top: 8px; }
+
+.cards {
+  display: flex; align-items: stretch;
+  max-width: 640px; width: 100%;
+  border: 1px solid var(--border); border-radius: 4px; overflow: hidden;
+}
+
+.card {
+  flex: 1; padding: 40px 32px;
+  background: var(--surface);
+  display: flex; flex-direction: column; gap: 12px;
+  transition: background 0.2s;
+  text-decoration: none; color: inherit;
+}
+.card:hover:not(.cardPassive) { background: var(--surface2); }
+
+.cardPassive { cursor: default; opacity: 0.6; }
+
+.divider { width: 1px; background: var(--border); flex-shrink: 0; }
+
+.cardNum { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; color: var(--gold); }
+
+.cardTitle {
+  font-size: 18px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.05em; color: #fff;
+}
+
+.cardDesc { font-size: 14px; color: var(--muted); line-height: 1.6; flex: 1; }
+
+.cardCta { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+
+.cardNote { font-size: 11px; color: var(--faint); font-style: italic; }
+
+.footer { font-size: 10px; letter-spacing: 0.2em; color: var(--faint); text-transform: uppercase; }
+
+@media (max-width: 520px) {
+  .cards { flex-direction: column; }
+  .divider { width: 100%; height: 1px; }
+}
