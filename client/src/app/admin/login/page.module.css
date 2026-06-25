@@ -1,0 +1,27 @@
+.page {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  background-image: radial-gradient(ellipse at top, rgba(200,168,75,0.05) 0%, transparent 55%);
+}
+.box {
+  width: 100%; max-width: 400px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 4px;
+  padding: 40px 36px;
+  display: flex; flex-direction: column; gap: 32px;
+}
+.header { text-align: center; display: flex; flex-direction: column; gap: 6px; }
+.eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
+.title { font-size: 28px; font-weight: 900; letter-spacing: 0.06em; color: #fff; }
+.accent { color: var(--gold); }
+.sub { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+.form { display: flex; flex-direction: column; gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.err { font-size: 12px; color: var(--red); text-align: center; }
+.btn {
+  height: 46px; background: var(--gold); color: var(--black);
+  font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  border-radius: 3px; margin-top: 4px; transition: background 0.2s;
+}
+.btn:hover:not(:disabled) { background: var(--gold-light); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
