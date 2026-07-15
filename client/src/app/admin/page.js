@@ -38,7 +38,9 @@ export default function AdminPage() {
 
   useEffect(() => {
     if (!token) return;
-    authFetch(`${API}/api/admin/stats`).then(r => r.json()).then(d => { if (d.success) setStats(d.stats); });
+    authFetch(`${API}/api/admin/stats`)
+      .then(r => { if (r.status === 401) { logout(); } return r.json(); })
+      .then(d => { if (d.success) setStats(d.stats); });
   }, [token, authFetch]);
 
   const loadMembers = useCallback(() => {
@@ -48,7 +50,7 @@ export default function AdminPage() {
     if (filterStatus) params.set('status', filterStatus);
     if (filterType)   params.set('type', filterType);
     authFetch(`${API}/api/admin/members?${params}`)
-      .then(r => r.json())
+      .then(r => { if (r.status === 401) { logout(); } return r.json(); })
       .then(d => { if (d.success) { setMembers(d.members); setTotal(d.total); } });
   }, [token, authFetch, page, search, filterStatus, filterType]);
 
